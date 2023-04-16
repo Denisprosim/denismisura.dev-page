@@ -1,0 +1,31 @@
+.pp-item {
+    height: fit-content;
+    flex-direction: column;
+}
+
+.pp-container, .hp-container {
+    width: 100%;
+}
+
+.hp-container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.intro {
+    font-size: 100%;
+}
+
+.pp-h1 {
+    padding: 10px 0;
+}
+
+.mobileapp-pictures-container > img:nth-child(2) {
+    height: 65%;
+}
+
+.mobileapp-pictures-container > img:nth-child(odd) {
+    height: 60%;
+}

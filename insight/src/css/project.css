@@ -1,0 +1,261 @@
+.safari-content {
+    background-image: linear-gradient(130deg, rgb(8, 9, 75), rgb(5, 5, 22) 60%, rgb(33, 7, 51));
+}
+
+.pp-container {
+    display: grid;
+    gap: 5rem;
+    width: 50%;
+    margin: auto;
+    color: white;
+}
+
+.pp-h1 {
+    color: #fff;
+    padding: 50px 0;
+    font-weight: bolder;
+}
+
+.pp-content-header {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.pp-h2 {
+    font-weight: bold;
+}
+
+.pp-item {
+    height: fit-content;
+    padding: 1rem;
+}
+
+.pp-image-min {
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.logo-ul {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+.mobileapp-pictures-container {
+    height: 40vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.mobileapp-pictures-container > img:nth-child(2) {
+    height: 100%;
+}
+
+.mobileapp-pictures-container > img:nth-child(odd) {
+    height: 90%;
+}
+
+.logo-ul > li > img {
+    height: 50px;
+    width: 50px;
+    align-content: center;
+}
+
+.pp-content-text {
+    padding: 1rem 0;
+    height: 100%;
+    width: 100%;
+}
+
+.content-footer {
+    height: 300px;
+}
+
+.button-64 {
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    line-height: 1em;
+    min-width: 70px;
+    width: fit-content;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+
+}
+
+.button-64:active,
+.button-64:hover {
+    outline: 0;
+}
+
+.button-64 span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.button-64:hover span {
+    background: none;
+}
+
+.text {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .button-64 {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
+
+.pp-image-min:hover {
+    opacity: 0.7;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    z-index: 10;
+    background: black;
+}
+
+.pp-modal {
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 11;
+}
+
+h4 > a {
+    color: #00b4eb;
+    text-decoration: none;
+}
+
+h4 > a:hover {
+    text-decoration: none;
+    color: #AF40FFEB;
+}
+
+#pp-image {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1400px;
+}
+
+.gm {
+    padding-right: 10px;
+    width: 30px;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.pp-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pp-close:hover,
+.pp-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1430px) {
+    .pp-item {
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .pp-container {
+        width: 90%;
+    }
+}

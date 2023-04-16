@@ -1,0 +1,56 @@
+
+.hp-container {
+    padding-top: 150px;
+    display: grid;
+    width: 50%;
+    margin: auto;  
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: [col1-start] 50%  [col2-start] 25%  [col3-start] 25% [col3-end];
+    grid-template-rows: [row1-start] auto [row2-start] auto [row3-start] auto;
+    
+}
+
+.hp-h1 {
+    font-weight: bolder;
+    
+}
+
+.hp-h2 {
+    font-weight: bold;
+}
+
+.hp-card {
+
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 20px; 
+}
+
+.intro {
+    font-size: 150%; 
+    grid-column: col1-start / col3-start;
+    grid-row: row1-start ;
+}
+
+.dl-btn {
+    grid-column: col3-start ;
+    grid-row: row1-start;
+}
+
+.hobby {
+    grid-column: col1-start;
+    grid-row: row2-start ;
+}
+
+.experience {
+    grid-column: col2-start / col3-end;
+    grid-row: row2-start;
+
+}
+
+.roller {
+    grid-column: col1-start / col3-end;
+    grid-row: row3-start ; 
+    text-align: center;
+}
