@@ -128,17 +128,24 @@ a:hover {
     border: 1px #161616;
     border-style: inset;
     border-bottom: none;
+    transition: 300ms;
 }
 
 .page:hover {
-    background-color: #413f3f;
+    background-color: #333131;
     cursor: pointer;
 }
 
 .page-selected {
     background-color: #343537;
     color: white;
-    border: none;
+    border-style: none;
+    
+}
+
+.page-selected:hover {
+    background-color: #343537;
+    cursor: default;
 }
 
 .x-active {
@@ -322,6 +329,8 @@ a:hover {
 .transparent {
     background-color: transparent;
     border-right: none;
+    border-top: none;
+    border-left: none;
 }
 
 .btn-send {
