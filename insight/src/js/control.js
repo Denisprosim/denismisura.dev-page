@@ -21,84 +21,83 @@ function isInViewport(element) {
 
 //Drag'n'drop window
 for (let panel of panels) {
-  panel.addEventListener('mousedown', mousedown);
-  function mousedown(e) {
-    let block = e.target.parentNode;
-    window.addEventListener('mousemove', mousemove);
-    window.addEventListener('mouseup', mouseup);
-    if (!block.classList.contains('dots') && !block.classList.contains('panel')) {
-      makeActive(block);
-    }
-    let prevX = e.clientX;
-    let prevY = e.clientY;
+  panel.addEventListener('mousedown', dragMousedown);
+}
 
-    function mousemove(e) {
-      e.preventDefault();
-      if (!isResizing && !block.classList.contains('fullsize') &&
-        !block.classList.contains('dots') && !block.classList.contains('panel')) {
-        let newX = prevX - e.clientX;
-        let newY = prevY - e.clientY;
+function dragMousedown(e) {
+  let block = e.target.parentNode;
+  window.addEventListener('mousemove', mousemove);
+  window.addEventListener('mouseup', mouseup);
+  if (!block.classList.contains('dots') && !block.classList.contains('panel')) {
+    makeActive(block);
+  }
+  let prevX = e.clientX;
+  let prevY = e.clientY;
 
-        const rect = block.getBoundingClientRect();
-        block.style.left = rect.left - newX + "px";
-        if (e.clientY < 0) {
-          block.style.top = 0;
-        } else {
-          block.style.top = rect.top - newY + "px";
-        }
-        prevX = e.clientX;
-        prevY = e.clientY;
+  function mousemove(e) {
+    e.preventDefault();
+    if (!isResizing && !block.classList.contains('fullsize') &&
+      !block.classList.contains('dots') && !block.classList.contains('panel')) {
+      let newX = prevX - e.clientX;
+      let newY = prevY - e.clientY;
+
+      const rect = block.getBoundingClientRect();
+      block.style.left = rect.left - newX + "px";
+      if (e.clientY < 0) {
+        block.style.top = 0;
+      } else {
+        block.style.top = rect.top - newY + "px";
       }
+      prevX = e.clientX;
+      prevY = e.clientY;
     }
+  }
 
-    function mouseup() {
-      window.removeEventListener('mousemove', mousemove);
-      window.removeEventListener('mouseup', mouseup);
-    }
+  function mouseup() {
+    window.removeEventListener('mousemove', mousemove);
+    window.removeEventListener('mouseup', mouseup);
   }
 }
 
 //Resizing window
 for (let resizer of resizers) {
-  resizer.addEventListener('mousedown', mousedown);
+  resizer.addEventListener('mousedown', resizeMousedown);
+}
 
-  function mousedown(e) {
-    currentResizer = e.target;
-    let block = e.target.parentNode;
-    isResizing = true;
-    makeActive(block);
-    let prevX = e.clientX;
-    let prevY = e.clientY;
+function resizeMousedown(e) {
+  currentResizer = e.target;
+  let block = e.target.parentNode;
+  isResizing = true;
+  makeActive(block);
+  let prevX = e.clientX;
+  let prevY = e.clientY;
 
-    window.addEventListener('mousemove', mousemove);
-    window.addEventListener('mouseup', mouseup)
+  window.addEventListener('mousemove', mousemove);
+  window.addEventListener('mouseup', mouseup)
 
-    function mousemove(e) {
-      e.preventDefault();
-      const rect = block.getBoundingClientRect();
+  function mousemove(e) {
+    e.preventDefault();
+    const rect = block.getBoundingClientRect();
 
-      if (currentResizer.classList.contains('se')) {
-        block.style.width = (e.clientX - block.offsetLeft) + 'px';
-        block.style.height = (e.clientY - block.offsetTop) + 'px';
-      }
-
-      if (currentResizer.classList.contains('e')) {
-        block.style.width = (e.clientX - block.offsetLeft) + 'px';
-      }
-
-      if (currentResizer.classList.contains('s')) {
-        block.style.height = (e.clientY - block.offsetTop) + 'px';
-      }
-
-      prevX = e.clientX;
-      prevY = e.clientY;
+    if (currentResizer.classList.contains('se')) {
+      block.style.width = (e.clientX - block.offsetLeft) + 'px';
+      block.style.height = (e.clientY - block.offsetTop) + 'px';
+    }
+    if (currentResizer.classList.contains('e')) {
+      block.style.width = (e.clientX - block.offsetLeft) + 'px';
+    }
+    if (currentResizer.classList.contains('s')) {
+      block.style.height = (e.clientY - block.offsetTop) + 'px';
     }
 
-    function mouseup() {
-      window.removeEventListener('mousedown', mousedown);
-      window.removeEventListener('mousemove', mousemove);
-      isResizing = false;
-    }
+    prevX = e.clientX;
+    prevY = e.clientY;
+  }
+
+  function mouseup() {
+    window.removeEventListener('mousedown', resizeMousedown);
+    window.removeEventListener('mousemove', mousemove);
+    isResizing = false;
   }
 }
 
@@ -131,7 +130,7 @@ function showApp(elementId) {
     setTimeout(function () {
       app.classList.remove('grow-animation');
     }, 200);
-  } else if (!app.classList.contains('x-active')){
+  } else if (!app.classList.contains('x-active')) {
     makeActive(app);
   } else {
     shrink(app);
@@ -142,7 +141,7 @@ function makeActive(element) {
   var activeElement = document.querySelector('.x-active');
   if (activeElement !== null) {
     activeElement.classList.remove('x-active');
-    element.classList.add('x-active');   
+    element.classList.add('x-active');
   }
   else {
     element.classList.add('x-active');
