@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-    width: 0.8em;
+    width: thin;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -16,7 +16,7 @@
 .body {
     margin: 0;
     background-color: #343537;
-    background-image: url(../img/mountains.jpg);
+    background-image: url(../img/mountains.webp);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -98,7 +98,7 @@
     transform: scale(0.9);
 }
 
-.shadow {
+.bg-shadow {
     box-shadow: rgba(0, 0, 0, 0.90) 0px 22px 70px 4px;
     background-color: rgb(33, 32, 32);
     backdrop-filter: blur(40px);
