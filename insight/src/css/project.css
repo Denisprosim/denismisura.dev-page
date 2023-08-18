@@ -56,13 +56,19 @@
   height: 50px;
 }
 
-.mobileapp-pictures-container {
+.mobileapp-pictures-container, .pictures-container {
   height: 40vh;
   width: 100%;
+  gap: 1rem;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.mobileapp-pictures-container > img:hover, .pictures-container > img:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .mobileapp-pictures-container > img:nth-child(2) {
@@ -70,6 +76,10 @@
 }
 
 .mobileapp-pictures-container > img:nth-child(odd) {
+  height: 90%;
+}
+
+.pictures-container > img {
   height: 90%;
 }
 
@@ -140,6 +150,7 @@
 }
 
 .pp-image-min:hover {
+  cursor: pointer;
   opacity: 0.7;
 }
 

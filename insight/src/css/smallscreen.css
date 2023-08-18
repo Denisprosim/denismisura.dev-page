@@ -29,3 +29,11 @@
 .mobileapp-pictures-container > img:nth-child(odd) {
     height: 60%;
 }
+
+.pictures-container > img:nth-child(2) {
+    display: none;
+}
+
+.pictures-container > img:nth-child(1) {
+    height: 100%;
+}
